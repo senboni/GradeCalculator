@@ -1,8 +1,10 @@
 {
-  "name": "gradecalculator",
+  "name": "universal-grade-matrix",
   "version": "1.0.0",
+  "homepage": "https://senboni.github.io/GradeCalculator/",
   "main": "index.js",
   "dependencies": {
+    "@expo/metro-runtime": "~56.0.15",
     "expo": "~56.0.12",
     "expo-status-bar": "~56.0.4",
     "react": "19.2.3",
@@ -13,9 +15,11 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "predeploy": "npx expo export -p web",
+    "deploy": "gh-pages --nojekyll -d dist"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
